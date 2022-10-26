@@ -16,4 +16,9 @@ export class HnDataService {
     const url = `https://hacker-news.firebaseio.com/v0/${feedType}stories.json`;
     return this.httpClient.get(url).pipe(retry(2));
   }
+
+  getItem<T>(itemId: number): Observable<T> {
+    const url = `https://hacker-news.firebaseio.com/v0/item/${itemId}.json?`;
+    return this.httpClient.get<T>(url).pipe(retry(2));
+  }
 }

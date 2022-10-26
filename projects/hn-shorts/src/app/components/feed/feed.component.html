@@ -1,0 +1,5 @@
+<div class="w-screen h-screen">
+  <div *ngFor="let dataItem of data$ | async">
+    <app-story [storyId]="dataItem"></app-story>
+  </div>
+</div>
