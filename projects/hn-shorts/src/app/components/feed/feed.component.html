@@ -1,18 +1,10 @@
-<!-- <div class="w-screen h-screen">
-  <div *ngFor="let dataItem of data$ | async">
-    <app-story [storyId]="dataItem"></app-story>
-  </div>
-</div> -->
-<swiper
-  [slidesPerView]="1"
-  [navigation]="true"
-  [pagination]="{ type: 'fraction' }"
-  [keyboard]="{
+<div class="relative h-screen">
+  <swiper class="w-full h-full" [direction]="'vertical'" [slidesPerView]="1" [navigation]="false" [pagination]="false"
+    [keyboard]="{
     enabled: true
-  }"
-  [virtual]="true"
->
-  <ng-template swiperSlide *ngFor="let dataItem of data$ | async">
-    <app-story [storyId]="dataItem"></app-story>    
-  </ng-template>
-</swiper>
+  }" [virtual]="true" [autoHeight]="true">
+    <ng-template swiperSlide *ngFor="let dataItem of data$ | async">
+      <app-story [storyId]="dataItem"></app-story>
+    </ng-template>
+  </swiper>
+</div>

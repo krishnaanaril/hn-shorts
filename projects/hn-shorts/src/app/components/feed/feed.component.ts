@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { filter, map, Observable, of, switchMap } from 'rxjs';
+import { SwiperComponent } from "swiper/angular";
 import SwiperCore, { Keyboard, Pagination, Navigation, Virtual } from 'swiper';
 
 SwiperCore.use([Keyboard, Pagination, Navigation, Virtual]);
@@ -10,7 +11,8 @@ import { HnDataService } from '../../shared/services/hn-data.service';
 @Component({
   selector: 'app-feed',
   templateUrl: './feed.component.html',
-  styleUrls: ['./feed.component.css']
+  styleUrls: ['./feed.component.css'], 
+  encapsulation: ViewEncapsulation.None
 })
 export class FeedComponent implements OnInit {
 
@@ -47,14 +49,6 @@ export class FeedComponent implements OnInit {
       .pipe(
         map((feedList: number[]) => feedList.slice(0, 10))
       );
-  }
-
-  onSwiper(data: any) {    
-    console.log(data);
-  }
-
-  onSlideChange() {
-    console.log('slide change');
   }
 
 }
