@@ -23,8 +23,9 @@
               "projects/hn-shorts/src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "./node_modules/swiper/swiper-bundle.css",
-              "projects/hn-shorts/src/styles.css"              
+              "projects/hn-shorts/src/styles.css"
             ],
             "scripts": []
           },
@@ -91,6 +92,7 @@
               "projects/hn-shorts/src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "projects/hn-shorts/src/styles.css"
             ],
             "scripts": []

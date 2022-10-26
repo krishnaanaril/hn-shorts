@@ -8,6 +8,7 @@ import { SharedModule } from './shared/shared.module';
 import { FeedComponent } from './components/feed/feed.component';
 import { AppRoutingModule } from './app-routing.module';
 import { StoryComponent } from './components/story/story.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,7 @@ import { StoryComponent } from './components/story/story.component';
     HttpClientModule,
     SharedModule,
     AppRoutingModule, 
-    SwiperModule
+    SwiperModule, BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

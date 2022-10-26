@@ -22,3 +22,5 @@
          url('./assets/fonts/raleway-v28-latin/raleway-v28-latin-regular.svg#Raleway') format('svg'); /* Legacy iOS */
   }
   
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
