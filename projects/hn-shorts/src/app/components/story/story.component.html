@@ -1,6 +1,35 @@
-<div class="h-screen bg-timberwolf dark:bg-prussianblue relative flex flex-row items-center">
-    <h1 class="text-3xl font-raleway text-ferngreen dark:text-orange mx-3 font-bold px-3 py-2 box-decoration-clone dark:bg-lemonmeringue">
-        {{ storyDetails?.title }}
+<div class="main-block w-screen h-screen bg-gray-100 relative flex flex-row items-center">
+    <h1 class="block px-3">
+        <span
+            class="title-text text-3xl font-raleway text-gray-800 font-bold mx-3 pl-2 pr-4 py-2 box-decoration-clone leading-loose bg-gray-200">
+            {{ storyDetails?.title }}
+        </span>
     </h1>
+    <div class="flex flex-col absolute bottom-0 right-0">
+        <div class="my-3 px-2">
+            <button  mat-icon-button aria-label="Example icon button with a vertical three dot icon">
+                <mat-icon>thumb_up</mat-icon>
+            </button>
+        </div>    
+        <div class="my-3 px-2">
+            <button  mat-icon-button aria-label="Example icon button with a vertical three dot icon">
+                <mat-icon>comment</mat-icon>
+            </button>
+        </div>    
+        <div class="my-3 px-2">
+            <button  mat-icon-button aria-label="Example icon button with a vertical three dot icon">
+                <mat-icon>launch</mat-icon>
+            </button>
+        </div>    
+        <div class="my-3 px-2">
+            <button  mat-icon-button aria-label="Example icon button with a vertical three dot icon">
+                <mat-icon>share</mat-icon>
+            </button>
+        </div>    
+        <div class="my-3 px-2">
+            <button  mat-icon-button aria-label="Example icon button with a vertical three dot icon">
+                <mat-icon>file_download</mat-icon>
+            </button>
+        </div>                
+    </div>
 </div>
-

@@ -9,6 +9,7 @@ import { FeedComponent } from './components/feed/feed.component';
 import { AppRoutingModule } from './app-routing.module';
 import { StoryComponent } from './components/story/story.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialModule } from './material.module';
 
 @NgModule({
   declarations: [
@@ -19,9 +20,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   imports: [
     BrowserModule,
     HttpClientModule,
+    MaterialModule,
     SharedModule,
     AppRoutingModule, 
-    SwiperModule, BrowserAnimationsModule
+    SwiperModule, 
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
