@@ -11,11 +11,8 @@
     enabled: true
   }"
   [virtual]="true"
-  class="my-swiper"
 >
   <ng-template swiperSlide *ngFor="let dataItem of data$ | async">
-    <div class="swiper-slide-container h-screen">
-      Slide - {{ dataItem }}
-    </div>
+    <app-story [storyId]="dataItem"></app-story>    
   </ng-template>
 </swiper>
