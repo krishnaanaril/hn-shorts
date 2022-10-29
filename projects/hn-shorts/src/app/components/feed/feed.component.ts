@@ -45,10 +45,7 @@ export class FeedComponent implements OnInit {
 
   populateData(feedType: string) {
     this.data$ = this.dataService
-      .getFeed(feedType)
-      .pipe(
-        map((feedList: number[]) => feedList.slice(0, 10))
-      );
+      .getFeed(feedType);      
   }
 
 }

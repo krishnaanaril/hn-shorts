@@ -13,6 +13,9 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "allowedCommonJsDependencies": [
+              "file-saver"
+            ],
             "outputPath": "dist/hn-shorts",
             "index": "projects/hn-shorts/src/index.html",
             "main": "projects/hn-shorts/src/main.ts",
@@ -20,14 +23,17 @@
             "tsConfig": "projects/hn-shorts/tsconfig.app.json",
             "assets": [
               "projects/hn-shorts/src/favicon.ico",
-              "projects/hn-shorts/src/assets"
+              "projects/hn-shorts/src/assets",
+              "projects/hn-shorts/src/manifest.webmanifest"
             ],
             "styles": [
               "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "./node_modules/swiper/swiper-bundle.css",
               "projects/hn-shorts/src/styles.css"
             ],
-            "scripts": []
+            "scripts": [],
+            "serviceWorker": true,
+            "ngswConfigPath": "projects/hn-shorts/ngsw-config.json"
           },
           "configurations": {
             "production": {
@@ -89,7 +95,8 @@
             "karmaConfig": "projects/hn-shorts/karma.conf.js",
             "assets": [
               "projects/hn-shorts/src/favicon.ico",
-              "projects/hn-shorts/src/assets"
+              "projects/hn-shorts/src/assets",
+              "projects/hn-shorts/src/manifest.webmanifest"
             ],
             "styles": [
               "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",

@@ -1,7 +1,3 @@
-.main-block {
-    background: radial-gradient(circle at top left, #0008C1, #FDF0E0);            
-}
-
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -15,5 +11,61 @@
 }
 
 .title-text {
-    animation: fadeInUp 1s ease-in; 
+    animation: fadeInUp 1s ease-in;
+}
+
+.placeholder {
+    background: #eee;    
+    position: relative;
+    overflow: hidden;
+}
+
+.type-proxy {
+    @apply mx-6 w-1/3 h-8;
+}
+
+.type-proxy::after {
+    @apply w-1/3;
+}
+
+.title-proxy {
+    @apply mx-6 my-2 w-3/4 h-20;
+}
+
+.title-proxy::after {
+    @apply w-3/4 ;
+}
+
+.time-proxy {
+    @apply mx-6 w-1/2 h-8;
+}
+
+.time-proxy::after {
+    @apply w-1/2;
+}
+
+.placeholder::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, #eee, #f4f4f4, #eee);
+    animation: gradient 1s infinite ease-in-out;
+}
+
+@keyframes gradient {
+    form {
+        left: 0%;
+    }
+
+    to {
+        left: 100%;
+    }
+}
+
+.mat-icon-button {
+    width: 64px !important;
+    height: 64px !important;
+    line-height: 24px !important;
 }
