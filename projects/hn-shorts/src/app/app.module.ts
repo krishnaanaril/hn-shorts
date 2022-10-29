@@ -12,12 +12,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { IconComponent } from './components/icon/icon.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FeedComponent,
-    StoryComponent
+    StoryComponent,
+    IconComponent
   ],
   imports: [
     BrowserModule,
