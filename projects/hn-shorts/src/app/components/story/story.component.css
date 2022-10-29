@@ -63,3 +63,9 @@
         left: 100%;
     }
 }
+
+.mat-icon-button {
+    width: 64px !important;
+    height: 64px !important;
+    line-height: 24px !important;
+}

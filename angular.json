@@ -13,6 +13,9 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "allowedCommonJsDependencies": [
+              "file-saver"
+            ],
             "outputPath": "dist/hn-shorts",
             "index": "projects/hn-shorts/src/index.html",
             "main": "projects/hn-shorts/src/main.ts",
