@@ -1,35 +1,48 @@
-<div class="main-block w-screen h-screen bg-gray-100 relative flex flex-row items-center">
-    <h1 class="block px-3">
-        <span
-            class="title-text text-3xl font-raleway text-gray-800 font-bold mx-3 pl-2 pr-4 py-2 box-decoration-clone leading-loose bg-gray-200">
-            {{ storyDetails?.title }}
-        </span>
-    </h1>
-    <div class="flex flex-col absolute bottom-0 right-0">
+<div class="w-screen h-screen bg-gray-100 relative flex flex-col justify-start">
+    <div *ngIf="!!storyDetails; else placeholder" class="flex flex-col mt-16">
+        <div class="block mx-6 text-gray-500">
+            <span class="text-2xl underline underline-offset-4">{{storyDetails?.type}}</span>
+        </div>
+        <h1 class="block px-3">
+            <span
+                class="title-text text-4xl font-raleway text-gray-200 font-bold mx-3 pl-2 pr-4 py-2 box-decoration-clone leading-loose bg-gray-500">
+                {{ storyDetails?.title }}
+            </span>
+        </h1>
+        <div class="block mx-6 text-gray-600">
+            <span class="pr-2 text-xl">{{storyDetails?.by}}</span>
+            <span class="pl-2 border-l-4 border-red-400">{{timeSince(storyDetails?.time)}} ago</span>
+        </div>
+    </div>
+    <ng-template #placeholder>
+        <div class="flex flex-col mt-16">
+            <div class="type-proxy placeholder"></div>
+            <div class="title-proxy placeholder"></div>
+            <div class="title-proxy placeholder"></div>
+            <div class="title-proxy placeholder"></div>
+            <div class="time-proxy placeholder"></div>
+        </div>
+    </ng-template>
+    <div class="flex flex-col absolute bottom-0 right-0 pb-5">
         <div class="my-3 px-2">
-            <button  mat-icon-button aria-label="Example icon button with a vertical three dot icon">
-                <mat-icon>thumb_up</mat-icon>
+            <button mat-icon-button aria-label="Button to view content in another tab">
+                <app-icon iconText="launch" labelText="View"></app-icon>
             </button>
-        </div>    
+        </div>
         <div class="my-3 px-2">
-            <button  mat-icon-button aria-label="Example icon button with a vertical three dot icon">
-                <mat-icon>comment</mat-icon>
+            <button mat-icon-button aria-label="Button to view comments">
+                <app-icon iconText="comment" labelText="25"></app-icon>
             </button>
-        </div>    
+        </div>
         <div class="my-3 px-2">
-            <button  mat-icon-button aria-label="Example icon button with a vertical three dot icon">
-                <mat-icon>launch</mat-icon>
+            <button mat-icon-button aria-label="Button to share content">
+                <app-icon iconText="share" labelText="Share"></app-icon>
             </button>
-        </div>    
+        </div>
         <div class="my-3 px-2">
-            <button  mat-icon-button aria-label="Example icon button with a vertical three dot icon">
-                <mat-icon>share</mat-icon>
+            <button mat-icon-button aria-label="Button to download display as image">
+                <app-icon iconText="file_download" labelText="Save"></app-icon>
             </button>
-        </div>    
-        <div class="my-3 px-2">
-            <button  mat-icon-button aria-label="Example icon button with a vertical three dot icon">
-                <mat-icon>file_download</mat-icon>
-            </button>
-        </div>                
+        </div>
     </div>
 </div>
