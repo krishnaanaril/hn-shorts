@@ -1,11 +1,17 @@
-<div  id="main-block" class="w-screen h-screen bg-gray-100 relative flex flex-col justify-start">
+<div  id="main-block" class="w-screen h-screen font-raleway bg-gray-100 relative flex flex-col justify-start">
     <div *ngIf="!!storyDetails; else placeholder" class="flex flex-col mt-16">
+        <div class="absolute font-bold top-0 right-0 mt-2 mr-2 px-3 flex flex-row text-red-400">
+            <div class="pr-2">
+                <mat-icon class="!text-2xl !inline-grid !items-center" [inline]="true">favorite</mat-icon>
+            </div>
+            <span class="text-2xl inline-grid items-start">{{storyDetails.score}}</span>
+        </div>
         <div class="block mx-6 text-gray-500">
             <span class="text-2xl underline underline-offset-4">{{storyDetails.type}}</span>
         </div>
         <h1 class="block px-3">
             <span
-                class="title-text text-4xl font-raleway text-gray-200 font-bold mx-3 pl-2 pr-4 py-2 box-decoration-clone leading-loose bg-gray-500 break-words">
+                class="title-text text-4xl text-gray-200 font-bold mx-3 pl-2 pr-4 py-2 box-decoration-clone leading-loose bg-gray-500 break-words">
                 {{ storyDetails.title }}
             </span>
         </h1>
