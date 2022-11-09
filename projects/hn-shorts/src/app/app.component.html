@@ -1,20 +1,32 @@
-<router-outlet></router-outlet>
-<!-- <div class="swipe-kmcontainer">
-    <swiper
-    [direction]="'vertical'"
-    [pagination]="{
-      clickable: true
-    }"
-    class="mySwiper"
-  >
-    <ng-template swiperSlide>Slide 1</ng-template
-    ><ng-template swiperSlide>Slide 2</ng-template
-    ><ng-template swiperSlide>Slide 3</ng-template
-    ><ng-template swiperSlide>Slide 4</ng-template
-    ><ng-template swiperSlide>Slide 5</ng-template
-    ><ng-template swiperSlide>Slide 6</ng-template
-    ><ng-template swiperSlide>Slide 7</ng-template
-    ><ng-template swiperSlide>Slide 8</ng-template
-    ><ng-template swiperSlide>Slide 9</ng-template>
-  </swiper>
-</div> -->
+<mat-sidenav-container #sidenavContainer>
+  <mat-sidenav #sidenav mode="over">
+    <ul>
+      <li>
+        <a routerLink="/feed/top" routerLinkActive="activeLink">Top</a>
+      </li>
+      <li>
+        <a routerLink="/feed/new" routerLinkActive="activeLink">New</a>
+      </li>
+      <li>
+        <a routerLink="/feed/best" routerLinkActive="activeLink">Best</a>
+      </li>
+      <li>
+        <a routerLink="/feed/ask" routerLinkActive="activeLink">Ask</a>
+      </li>
+      <li>
+        <a routerLink="/feed/show" routerLinkActive="activeLink">Show</a>
+      </li>
+      <li>
+        <a routerLink="/feed/job" routerLinkActive="activeLink">Job</a>
+      </li>
+    </ul>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+    <div class="absolute top-3 left-3">
+      <button class="z-10" mat-icon-button aria-label="Button to show side nav" onclick="this.blur()" (click)="toggleSideNav()">
+        <mat-icon>menu</mat-icon>
+      </button>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

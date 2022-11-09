@@ -6,8 +6,13 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class GetDomainPipe implements PipeTransform {
 
   transform(url: string): unknown {
-    const urlDetails = new URL(url);
-    return urlDetails?.hostname
+    console.log(url);
+    let domain = '';
+    if(url) {
+      const urlDetails = new URL(url);
+      domain = urlDetails?.hostname
+    }
+    return domain;
   }
 
 }
