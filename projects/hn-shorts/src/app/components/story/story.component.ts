@@ -137,5 +137,10 @@ export class StoryComponent implements OnInit {
     return Math.floor(seconds) + (interval === 1 ? ' second' : ' seconds');
   }
 
+  getHostName(url: string) : string {
+    const urlDetails = new URL(url);
+    return urlDetails?.hostname
+  }
+
 
 }
