@@ -7,7 +7,7 @@
                 </span>                
                 <span class="ml-1 align-top">{{storyDetails.score}}</span>
             </div>
-            <span class="pl-2 border-l-4 align-text-bottom border-red-400">{{getHostName(storyDetails.url)}}</span>
+            <span class="pl-2 border-l-4 border-red-400">{{storyDetails.url | getDomain}}</span>
         </div>    
         <h1 class="block px-3">
             <span
@@ -17,7 +17,7 @@
         </h1>
         <div class="block mx-6 text-gray-600">
             <span class="pr-2 text-xl">{{storyDetails.by}}</span>
-            <span class="pl-2 border-l-4 border-red-400">{{timeSince(storyDetails.time)}} ago</span>
+            <span class="pl-2 border-l-4 border-red-400">{{storyDetails.time | timeSince}} ago</span>
         </div>
     </div>
     <ng-template #placeholder>
