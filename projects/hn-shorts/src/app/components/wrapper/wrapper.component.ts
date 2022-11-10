@@ -1,7 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatSidenav, MatSidenavContainer } from '@angular/material/sidenav';
-import { NavigationEnd, Router } from '@angular/router';
-import { filter } from 'rxjs';
+import { ActivatedRoute, NavigationEnd, ParamMap, Router, RoutesRecognized } from '@angular/router';
+import { filter, of, switchMap, tap } from 'rxjs';
+import { NotificationService } from '../../shared/services/notification.service';
 
 @Component({
   selector: 'app-wrapper',
@@ -13,11 +14,24 @@ export class WrapperComponent implements OnInit {
   @ViewChild('sidenav', { static: true }) sidenav!: MatSidenav;
   @ViewChild('sidenavContainer', { static: true })
   sidenavContainer!: MatSidenavContainer;
-  
-  constructor(private router: Router) { }
+  feedType!: string;
+
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router) { }
 
   ngOnInit(): void {
     this.sidenav.autoFocus = false;
+    this.router.events
+      .pipe(
+        filter(
+          (event): event is RoutesRecognized => event instanceof RoutesRecognized
+        )
+      )
+      .subscribe((event) => {
+        console.log(event.state.root.firstChild?.params['feedType']);
+        this.feedType = event.state.root.firstChild?.params['feedType'];
+      });
     this.router.events
       .pipe(
         filter(
@@ -31,9 +45,7 @@ export class WrapperComponent implements OnInit {
 
   toggleSideNav() {
     this.sidenav
-      .toggle()
-      .then(() => console.log('toggled'))
-      .catch((err) => console.error(err));
+      .toggle();
   }
 
 }

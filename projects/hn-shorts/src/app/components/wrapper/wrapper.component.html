@@ -4,11 +4,12 @@
     </mat-sidenav>
     <mat-sidenav-content>
         <router-outlet></router-outlet>
-        <div class="absolute top-3 left-3">
+        <div class="absolute top-3 left-3 flex flex-row">
             <button class="z-10" mat-icon-button aria-label="Button to show side nav" onclick="this.blur()"
                 (click)="toggleSideNav()">
                 <mat-icon>menu</mat-icon>
             </button>
+            <span class="z-10">{{feedType}}</span>
         </div>
     </mat-sidenav-content>
 </mat-sidenav-container>

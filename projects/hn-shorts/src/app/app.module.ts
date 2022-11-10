@@ -17,13 +17,13 @@ import { SideNavContentComponent } from './components/side-nav-content/side-nav-
 import { WrapperComponent } from './components/wrapper/wrapper.component';
 
 @NgModule({
-  declarations: [
+  declarations: [    
     AppComponent,
     FeedComponent,
     StoryComponent,
     IconComponent,    
     SideNavContentComponent,
-    WrapperComponent
+    WrapperComponent    
   ],
   imports: [
     BrowserModule,
