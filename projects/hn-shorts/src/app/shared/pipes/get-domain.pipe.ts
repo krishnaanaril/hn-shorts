@@ -5,8 +5,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class GetDomainPipe implements PipeTransform {
 
-  transform(url: string): unknown {
-    console.log(url);
+  transform(url: string): unknown {    
     let domain = '';
     if(url) {
       const urlDetails = new URL(url);
