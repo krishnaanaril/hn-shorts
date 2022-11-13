@@ -2,9 +2,9 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { filter, map, Observable, of, switchMap } from 'rxjs';
 import { SwiperComponent } from "swiper/angular";
-import SwiperCore, { Keyboard, Mousewheel, Virtual } from 'swiper';
+import SwiperCore, { Autoplay, Keyboard, Mousewheel, Virtual } from 'swiper';
 
-SwiperCore.use([Keyboard, Mousewheel, Virtual]);
+SwiperCore.use([Autoplay, Keyboard, Mousewheel, Virtual]);
 
 import { HnDataService } from '../../shared/services/hn-data.service';
 

@@ -1,3 +1,4 @@
+<mat-progress-bar mode="determinate"  [value]="progressBarValue"></mat-progress-bar>
 <div  id="main-block" class="w-screen h-screen font-raleway bg-gray-100 relative flex flex-col justify-start">
     <div *ngIf="!!storyDetails; else placeholder" class="flex flex-col mt-16">          
         <div class="block mx-6 text-xl text-gray-600">
@@ -7,7 +8,7 @@
                 </span>                
                 <span class="ml-1 align-top">{{storyDetails.score}}</span>
             </div>
-            <span class="pl-2 border-l-4 border-red-400">{{storyDetails.url | getDomain}}</span>
+            <span *ngIf="storyDetails.url" class="pl-2 border-l-4 border-red-400">{{storyDetails.url | getDomain}}</span>
         </div>    
         <h1 class="block px-3">
             <span

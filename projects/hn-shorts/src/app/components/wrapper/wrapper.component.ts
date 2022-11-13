@@ -28,8 +28,7 @@ export class WrapperComponent implements OnInit {
           (event): event is RoutesRecognized => event instanceof RoutesRecognized
         )
       )
-      .subscribe((event) => {
-        console.log(event.state.root.firstChild?.params['feedType']);
+      .subscribe((event) => {        
         this.feedType = event.state.root.firstChild?.params['feedType'];
       });
     this.router.events
