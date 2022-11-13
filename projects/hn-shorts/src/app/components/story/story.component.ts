@@ -1,5 +1,5 @@
 import { DOCUMENT } from '@angular/common';
-import { Component, Inject, Input, OnInit, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, Inject, Input, OnInit } from '@angular/core';
 import { saveAs } from 'file-saver';
 import { toBlob } from 'html-to-image';
 
@@ -7,24 +7,16 @@ import { Story } from '../../shared/models/story';
 import { ShareData } from '../../shared/models/share-data'
 import { HnDataService } from '../../shared/services/hn-data.service';
 import { NotificationService } from '../../shared/services/notification.service';
-import { BehaviorSubject, interval, map, switchMap, take } from 'rxjs';
 
 @Component({
   selector: 'app-story',
   templateUrl: './story.component.html',
   styleUrls: ['./story.component.css']
 })
-export class StoryComponent implements OnInit, OnChanges {
+export class StoryComponent implements OnInit {
 
   @Input() storyId!: number;
-  public storyDetails!: Story | null;
-  public dataChange = new BehaviorSubject<number>(0);
-  public timer$ = this.dataChange.pipe(
-    switchMap(() => interval(1000)),
-    map((item) => item+1),
-    take(5)
-  );
-  progressBarValue = 0;
+  public storyDetails!: Story | null;  
 
   constructor(
     @Inject(DOCUMENT)
@@ -41,18 +33,8 @@ export class StoryComponent implements OnInit, OnChanges {
           next: (story: Story) => {
             this.storyDetails = story;
           }
-        });
-      this.timer$.subscribe((sec)=>{
-        this.progressBarValue = sec * 100 / 5;
-        console.log(`sec: ${sec}, progressBar: ${this.progressBarValue}`)
-      });
+        });      
     }
-  }
-
-  ngOnChanges(changes: SimpleChanges) {
-    let story = changes['storyId'].currentValue;
-    console.log(`story: ${story}`);
-    this.dataChange.next(story);
   }
 
   buttonClick(action: string) {

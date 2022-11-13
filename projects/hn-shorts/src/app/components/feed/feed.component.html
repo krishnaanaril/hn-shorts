@@ -4,7 +4,7 @@
     enabled: true
   }" [virtual]="{addSlidesAfter: 0}" [autoHeight]="true" [mousewheel]="{
     forceToAxis: true
-  }" [autoplay]="{ delay: 5000}">
+  }">
     <ng-template swiperSlide *ngFor="let dataItem of data$ | async">
       <app-story [storyId]="dataItem"></app-story>
     </ng-template>
