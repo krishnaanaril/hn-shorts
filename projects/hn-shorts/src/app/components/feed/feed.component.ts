@@ -36,7 +36,7 @@ export class FeedComponent implements OnInit {
       )
       .subscribe({
         next: (type: string) => {
-          this.feedType = type;
+          this.feedType = type;          
           this.populateData(type);
         }
       });

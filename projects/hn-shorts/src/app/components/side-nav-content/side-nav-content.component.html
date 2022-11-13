@@ -1,0 +1,7 @@
+<div class="h-full bg-gray-300 font-semibold text-lg">
+    <ul class="w-40">
+        <li class="p-4" *ngFor="let link of links">
+            <a [routerLink]="link.value" routerLinkActive="activeLink">{{link.label}}</a>
+        </li>    
+    </ul>
+</div>

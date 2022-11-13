@@ -69,3 +69,7 @@
     height: 64px !important;
     line-height: 24px !important;
 }
+
+button {
+    @apply font-raleway;
+}

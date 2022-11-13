@@ -1,17 +1,23 @@
-<div  id="main-block" class="w-screen h-screen bg-gray-100 relative flex flex-col justify-start">
-    <div *ngIf="!!storyDetails; else placeholder" class="flex flex-col mt-16">
-        <div class="block mx-6 text-gray-500">
-            <span class="text-2xl underline underline-offset-4">{{storyDetails.type}}</span>
-        </div>
+<div  id="main-block" class="w-screen h-screen font-raleway bg-gray-100 relative flex flex-col justify-start">
+    <div *ngIf="!!storyDetails; else placeholder" class="flex flex-col mt-16">          
+        <div class="block mx-6 text-xl text-gray-600">
+            <div class="pr-2 inline">
+                <span class="align-middle">
+                    <mat-icon [inline]="true">favorite</mat-icon>
+                </span>                
+                <span class="ml-1 align-top">{{storyDetails.score}}</span>
+            </div>
+            <span *ngIf="storyDetails.url" class="pl-2 border-l-4 border-red-400">{{storyDetails.url | getDomain}}</span>
+        </div>    
         <h1 class="block px-3">
             <span
-                class="title-text text-4xl font-raleway text-gray-200 font-bold mx-3 pl-2 pr-4 py-2 box-decoration-clone leading-loose bg-gray-500 break-words">
+                class="title-text text-4xl text-gray-200 font-bold mx-3 pl-2 pr-4 py-2 box-decoration-clone leading-loose bg-gray-500 break-words">
                 {{ storyDetails.title }}
             </span>
         </h1>
         <div class="block mx-6 text-gray-600">
             <span class="pr-2 text-xl">{{storyDetails.by}}</span>
-            <span class="pl-2 border-l-4 border-red-400">{{timeSince(storyDetails.time)}} ago</span>
+            <span class="pl-2 border-l-4 border-red-400">{{storyDetails.time | timeSince}} ago</span>
         </div>
     </div>
     <ng-template #placeholder>

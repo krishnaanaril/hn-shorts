@@ -13,13 +13,17 @@ import { MaterialModule } from './material.module';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { IconComponent } from './components/icon/icon.component';
+import { SideNavContentComponent } from './components/side-nav-content/side-nav-content.component';
+import { WrapperComponent } from './components/wrapper/wrapper.component';
 
 @NgModule({
-  declarations: [
+  declarations: [    
     AppComponent,
     FeedComponent,
     StoryComponent,
-    IconComponent
+    IconComponent,    
+    SideNavContentComponent,
+    WrapperComponent    
   ],
   imports: [
     BrowserModule,
