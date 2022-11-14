@@ -1,21 +1,23 @@
-<div  id="main-block" class="w-screen h-screen font-raleway bg-gray-100 relative flex flex-col justify-start">
-    <div *ngIf="!!storyDetails; else placeholder" class="flex flex-col mt-16">          
-        <div class="block mx-6 text-xl text-gray-600">
+<div  id="main-block" class="w-screen h-screen font-raleway bg-gray-100 dark:bg-gray-800 relative flex flex-col justify-start">
+    <div *ngIf="!!storyDetails; else placeholder" class="flex flex-col mt-20">          
+        <div class="mx-6 text-xl text-gray-600 dark:text-gray-200 flex flex-row flex-wrap">
             <div class="pr-2 inline">
-                <span class="align-middle">
+                <span class="align-middle text-red-500">
                     <mat-icon [inline]="true">favorite</mat-icon>
                 </span>                
                 <span class="ml-1 align-top">{{storyDetails.score}}</span>
             </div>
-            <span *ngIf="storyDetails.url" class="pl-2 border-l-4 border-red-400">{{storyDetails.url | getDomain}}</span>
+            <div *ngIf="storyDetails.url" >
+                <span class="pl-2 border-l-4 border-red-400">{{storyDetails.url | getDomain}}</span>
+            </div>            
         </div>    
         <h1 class="block px-3">
             <span
-                class="title-text text-4xl text-gray-200 font-bold mx-3 pl-2 pr-4 py-2 box-decoration-clone leading-loose bg-gray-500 break-words">
+                class="title-text text-4xl rounded-md text-gray-200 font-bold mx-3 pl-2 pr-4 py-2 box-decoration-clone leading-loose bg-gray-500 dark:bg-gray-600 break-words backdrop-blur">
                 {{ storyDetails.title }}
             </span>
         </h1>
-        <div class="block mx-6 text-gray-600">
+        <div class="block mx-6 text-gray-600 dark:text-gray-400">
             <span class="pr-2 text-xl">{{storyDetails.by}}</span>
             <span class="pl-2 border-l-4 border-red-400">{{storyDetails.time | timeSince}} ago</span>
         </div>
@@ -23,32 +25,32 @@
     <ng-template #placeholder>
         <div class="flex flex-col mt-16">
             <div class="type-proxy placeholder"></div>
-            <div class="title-proxy placeholder"></div>
-            <div class="title-proxy placeholder"></div>
-            <div class="title-proxy placeholder"></div>
+            <div class="title-proxy placeholder rounded-md"></div>
+            <div class="title-proxy placeholder rounded-md"></div>
+            <div class="title-proxy placeholder rounded-md"></div>
             <div class="time-proxy placeholder"></div>
         </div>
-    </ng-template>
-    <div class="flex flex-col absolute bottom-0 right-0 pb-5">
-        <div class="my-1 px-2">
-            <button mat-icon-button class="w-16 h-16" aria-label="Button to view content in another tab" (click)="buttonClick('View')">
-                <app-icon iconText="launch" labelText="View"></app-icon>
-            </button>
-        </div>
-        <div class="my-1 px-2">
-            <button mat-icon-button aria-label="Button to view comments" (click)="buttonClick('Comment')">
-                <app-icon iconText="comment" [labelText]="storyDetails?.descendants?.toString()"></app-icon>
-            </button>
-        </div>
-        <div class="my-1 px-2">
-            <button mat-icon-button aria-label="Button to share content" (click)="buttonClick('Share')">
-                <app-icon iconText="share" labelText="Share"></app-icon>
-            </button>
-        </div>
-        <div class="my-1 px-2">
-            <button mat-icon-button aria-label="Button to download display as image" (click)="buttonClick('Save')">
-                <app-icon iconText="file_download" labelText="Save"></app-icon>
-            </button>
-        </div>
+    </ng-template>    
+</div>
+<div *ngIf="!!storyDetails" class="flex flex-col absolute bottom-0 right-0 pb-5 text-gray-800 dark:text-gray-200">
+    <div class="my-1 px-2">
+        <button mat-icon-button class="w-16 h-16" aria-label="Button to view content in another tab" (click)="buttonClick('View')">
+            <app-icon iconText="launch" labelText="View"></app-icon>
+        </button>
+    </div>
+    <div class="my-1 px-2">
+        <button mat-icon-button aria-label="Button to view comments" (click)="buttonClick('Comment')">
+            <app-icon iconText="comment" [labelText]="storyDetails.descendants.toString()"></app-icon>
+        </button>
+    </div>
+    <div class="my-1 px-2">
+        <button mat-icon-button aria-label="Button to share content" (click)="buttonClick('Share')">
+            <app-icon iconText="share" labelText="Share"></app-icon>
+        </button>
+    </div>
+    <div class="my-1 px-2">
+        <button mat-icon-button aria-label="Button to download display as image" (click)="buttonClick('Save')">
+            <app-icon iconText="file_download" labelText="Save"></app-icon>
+        </button>
     </div>
 </div>
