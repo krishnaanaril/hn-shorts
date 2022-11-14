@@ -14,8 +14,8 @@
     animation: fadeInUp 1s ease-in;
 }
 
-.placeholder {
-    background: #eee;    
+.placeholder {    
+    @apply bg-gray-100;
     position: relative;
     overflow: hidden;
 }
@@ -50,8 +50,17 @@
     top: 0;
     left: 0;
     bottom: 0;
-    background: linear-gradient(90deg, #eee, #f4f4f4, #eee);
+    background: linear-gradient(90deg, rgb(243 244 246), rgb(229 231 235), rgb(243 244 246));
     animation: gradient 1s infinite ease-in-out;
+}
+
+@media (prefers-color-scheme: dark) {
+    .placeholder {   
+        @apply bg-gray-700;
+     }
+    .placeholder::after {
+        background: linear-gradient(90deg, rgb(31 41 55), rgb(55 65 81), rgb(31 41 55));
+    }
 }
 
 @keyframes gradient {
