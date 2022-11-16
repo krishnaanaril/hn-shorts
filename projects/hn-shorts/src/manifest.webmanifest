@@ -1,7 +1,7 @@
 {
-  "name": "hn-shorts",
-  "short_name": "hn-shorts",
-  "theme_color": "#1976d2",
+  "name": "Hacker News Shorts",
+  "short_name": "HN Shorts",
+  "theme_color": "#1f2937",
   "background_color": "#fafafa",
   "display": "standalone",
   "scope": "./",
