@@ -2,11 +2,11 @@ import { ItemType } from "./item-type";
 
 export interface Story {
     by: string;
-    descendants: number;
+    descendants: number | undefined;
     id: number;
-    kids: number[];
+    kids: number[] | undefined;
     score: number;
-    text: string;
+    text: string | undefined;
     time: number;
     title: string;
     type: ItemType;

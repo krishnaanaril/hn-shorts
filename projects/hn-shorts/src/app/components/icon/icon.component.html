@@ -1,4 +1,8 @@
 <div *ngIf="!!iconText" class="flex flex-col items-center">
-    <mat-icon>{{iconText}}</mat-icon>
-    <span>{{labelText}}</span>
+    <div class="bg-gray-200/10 flex p-4 rounded-full backdrop-blur-xs">
+        <mat-icon>{{iconText}}</mat-icon>
+    </div>
+    <div>
+        <span>{{labelText}}</span>
+    </div>
 </div>
