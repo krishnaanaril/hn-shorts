@@ -1,11 +1,28 @@
 {
   "name": "Hacker News Shorts",
   "short_name": "HN Shorts",
+  "description": "Hacker New Reader with Youtube Short UX",
   "theme_color": "#1f2937",
   "background_color": "#fafafa",
   "display": "standalone",
   "scope": "./",
   "start_url": "./",
+  "shortcuts": [
+    {
+      "name": "Top Stories",
+      "short_name": "Top",
+      "description": "Top stories in Hacker News",
+      "url": "/top",
+      "icons": []
+    },
+    {
+      "name": "Best Stories",
+      "short_name": "Best",
+      "description": "Best stories in Hacker News",
+      "url": "/best",
+      "icons": []
+    }
+  ],
   "icons": [
     {
       "src": "assets/icons/icon-72x72.png",
