@@ -2,7 +2,7 @@
   <swiper class="w-full h-full" [direction]="'vertical'" [preventClicks]="false" [preventClicksPropagation]="false" [slidesPerView]="1"
     [keyboard]="{
     enabled: true
-  }" [virtual]="{addSlidesAfter: 5}" [autoHeight]="true" [mousewheel]="{
+  }" [virtual]="{addSlidesAfter: 0}" [autoHeight]="true" [mousewheel]="{
     forceToAxis: true
   }">
     <ng-template swiperSlide *ngFor="let dataItem of data$ | async">
