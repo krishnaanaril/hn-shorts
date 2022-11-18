@@ -12,14 +12,21 @@
       "name": "Top Stories",
       "short_name": "Top",
       "description": "Top stories in Hacker News",
-      "url": "/top",
+      "url": "feed/top",
+      "icons": []
+    },
+    {
+      "name": "New Stories",
+      "short_name": "New",
+      "description": "New stories in Hacker News",
+      "url": "feed/new",
       "icons": []
     },
     {
       "name": "Best Stories",
       "short_name": "Best",
       "description": "Best stories in Hacker News",
-      "url": "/best",
+      "url": "feed/best",
       "icons": []
     }
   ],

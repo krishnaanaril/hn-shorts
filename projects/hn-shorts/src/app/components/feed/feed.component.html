@@ -1,8 +1,8 @@
-<div class="relative h-screen bg-gray-100 dark:bg-gray-800">
+<div class="relative h-full bg-gray-100 dark:bg-gray-800">
   <swiper class="w-full h-full" [direction]="'vertical'" [preventClicks]="false" [preventClicksPropagation]="false" [slidesPerView]="1"
     [keyboard]="{
     enabled: true
-  }" [virtual]="{addSlidesAfter: 5}" [autoHeight]="true" [mousewheel]="{
+  }" [virtual]="{addSlidesAfter: 0}" [autoHeight]="true" [mousewheel]="{
     forceToAxis: true
   }">
     <ng-template swiperSlide *ngFor="let dataItem of data$ | async">
