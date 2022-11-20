@@ -1,13 +1,18 @@
 import { ApplicationRef, Injectable } from '@angular/core';
 import { SwUpdate, VersionReadyEvent } from '@angular/service-worker';
 import { concat, filter, first, interval, take } from 'rxjs';
+import { DIALOG_CONTENT, DIALOG_TITLE } from '../models/constants';
+import { NotificationService } from './notification.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UpdateService {
 
-  constructor(public appRef: ApplicationRef, public updates: SwUpdate) {    
+  constructor(
+    public appRef: ApplicationRef,
+    public updates: SwUpdate,
+    private notificationService: NotificationService) {
     this.checkForUpdate();
   }
 
@@ -34,17 +39,17 @@ export class UpdateService {
         filter((evt): evt is VersionReadyEvent => evt.type === 'VERSION_READY'),
         take(1)
       )
-      .subscribe(evt => {
-        if (this.promptUser(evt)) {
-          // Reload the page to update to the latest version.
-          document.location.reload();
-        }
+      .subscribe(event => {
+        this.promptUser(event);
       });
   }
 
-  private promptUser(event: VersionReadyEvent): boolean {
-    console.log('updating to new version');
-    console.log(event);
-    return true;
+  private promptUser(event: VersionReadyEvent): void {
+    this.notificationService
+      .openDialog(DIALOG_TITLE, DIALOG_CONTENT)
+      .subscribe(canUpdate => {
+        if (canUpdate)
+          document.location.reload;
+      });
   }
 }

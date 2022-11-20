@@ -1,0 +1,1 @@
+export type StoryAction = 'View' | 'Comment' | 'Share' | 'Save';

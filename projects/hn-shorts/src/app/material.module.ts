@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import { MatDialogModule } from '@angular/material/dialog';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
@@ -9,7 +10,8 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
   exports: [
     MatButtonModule,
     MatButtonToggleModule,
-    MatIconModule,    
+    MatDialogModule,
+    MatIconModule,
     MatSidenavModule,
     MatSnackBarModule
   ]

@@ -7,6 +7,7 @@ import { Story } from '../../shared/models/story';
 import { ShareData } from '../../shared/models/share-data'
 import { HnDataService } from '../../shared/services/hn-data.service';
 import { NotificationService } from '../../shared/services/notification.service';
+import { StoryAction } from '../../shared/models/union-types';
 
 @Component({
   selector: 'app-story',
@@ -37,7 +38,7 @@ export class StoryComponent implements OnInit {
     }
   }
 
-  buttonClick(action: string) {    
+  buttonClick(action: StoryAction) {    
     switch (action) {
       case 'View':
         this.viewStory();
@@ -66,7 +67,7 @@ export class StoryComponent implements OnInit {
       text: this.storyDetails?.title
     } as ShareData;
     if(!navigator.canShare){      
-      this.notificationService.open('Sorry, Your browser do not support this feature');
+      this.notificationService.openSnackBar('Sorry, Your browser do not support this feature');
     } 
     else {
       try {
@@ -84,7 +85,7 @@ export class StoryComponent implements OnInit {
 
   viewComments() {
     const commentUrl = `https://news.ycombinator.com/item?id=${this.storyDetails?.id}`;
-    window.open(commentUrl, "_blank");
+    window.open(commentUrl, "_blank");    
   }
 
   downloadImage() {
@@ -100,7 +101,7 @@ export class StoryComponent implements OnInit {
         }, (error)=> console.error(error));
     }
     else {
-      this.notificationService.open("Sorry, Image download is not possible at the moment");      
+      this.notificationService.openSnackBar("Sorry, Image download is not possible at the moment");      
     }
   }
 }
