@@ -3,11 +3,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
-
-
-
-
 /* raleway-regular - latin */
 @font-face {
     font-family: 'Raleway';
@@ -24,3 +19,7 @@
   
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.mat-dialog-container {
+  @apply bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200;
+}

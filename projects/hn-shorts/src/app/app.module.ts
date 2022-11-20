@@ -15,6 +15,7 @@ import { environment } from '../environments/environment';
 import { IconComponent } from './components/icon/icon.component';
 import { SideNavContentComponent } from './components/side-nav-content/side-nav-content.component';
 import { WrapperComponent } from './components/wrapper/wrapper.component';
+import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dialog.component';
 
 @NgModule({
   declarations: [    
@@ -23,7 +24,8 @@ import { WrapperComponent } from './components/wrapper/wrapper.component';
     StoryComponent,
     IconComponent,    
     SideNavContentComponent,
-    WrapperComponent    
+    WrapperComponent,
+    ConfirmDialogComponent    
   ],
   imports: [
     BrowserModule,

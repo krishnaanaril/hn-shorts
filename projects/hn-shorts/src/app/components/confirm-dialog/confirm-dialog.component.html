@@ -1,0 +1,10 @@
+<h1 mat-dialog-title class="">
+    {{data.title}}
+</h1>
+<div mat-dialog-content>
+    {{data.content}}
+</div>
+<div mat-dialog-actions class="flex justify-end">
+    <button mat-button (click)="onNoClick()">NO THANKS</button>
+    <button mat-button class="bg-green-500 text-gray-200" (click)="onUpdateClick()">UPDATE</button>
+</div>
