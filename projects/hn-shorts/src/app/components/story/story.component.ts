@@ -26,7 +26,7 @@ export class StoryComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    if (this.storyId) {
+    if (this.storyId) {      
       this.dataService
         .getItem<Story>(this.storyId)
         .subscribe({
@@ -37,8 +37,7 @@ export class StoryComponent implements OnInit {
     }
   }
 
-  buttonClick(action: string) {
-    console.log(`Clicked action: ${action}`)
+  buttonClick(action: string) {    
     switch (action) {
       case 'View':
         this.viewStory();
@@ -66,8 +65,7 @@ export class StoryComponent implements OnInit {
       title: "Hacker News | Shorts",
       text: this.storyDetails?.title
     } as ShareData;
-    if(!navigator.canShare){
-      console.log("No support for share");
+    if(!navigator.canShare){      
       this.notificationService.open('Sorry, Your browser do not support this feature');
     } 
     else {
@@ -102,7 +100,7 @@ export class StoryComponent implements OnInit {
         }, (error)=> console.error(error));
     }
     else {
-      console.log("not found");
+      this.notificationService.open("Sorry, Image download is not possible at the moment");      
     }
   }
 }

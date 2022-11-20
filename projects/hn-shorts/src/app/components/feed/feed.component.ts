@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { filter, map, Observable, of, switchMap } from 'rxjs';
 import { SwiperComponent } from "swiper/angular";
@@ -18,6 +18,7 @@ export class FeedComponent implements OnInit {
 
   private feedType!: string;
   public data$!: Observable<number[]>;
+  @ViewChild(SwiperComponent, { static: false }) swiper?: SwiperComponent;
 
   /**
    *
@@ -25,8 +26,7 @@ export class FeedComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private dataService: HnDataService
-  ) {
-  }
+  ) { }
 
   ngOnInit() {
     this.route.paramMap
@@ -36,12 +36,12 @@ export class FeedComponent implements OnInit {
       )
       .subscribe({
         next: (type: string) => {
-          this.feedType = type;          
+          this.feedType = type;             
+          this.swiper?.swiperRef.slideTo(0);   
           this.populateData(type);
         }
-      });
-    
-  }
+      });    
+  }  
 
   populateData(feedType: string) {
     this.data$ = this.dataService

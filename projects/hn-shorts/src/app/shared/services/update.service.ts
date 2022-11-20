@@ -7,8 +7,7 @@ import { concat, filter, first, interval, take } from 'rxjs';
 })
 export class UpdateService {
 
-  constructor(public appRef: ApplicationRef, public updates: SwUpdate) {
-    console.log('In update service ctor');
+  constructor(public appRef: ApplicationRef, public updates: SwUpdate) {    
     this.checkForUpdate();
   }
 
